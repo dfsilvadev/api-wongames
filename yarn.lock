@@ -1032,6 +1032,13 @@
   dependencies:
     sift "^13.0.0"
 
+"@ckeditor/ckeditor5-react@^3.0.3":
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-react/-/ckeditor5-react-3.0.3.tgz#7b2d2634bd70a1efcb837dde5a9ac3ed2d839fbc"
+  integrity sha512-Zaazd9Brg64v1Q2qQNtbfryWeVLzXWlNbswLsOYwNgvHlxroa8+F7ZE33M2O8zxcL6sQHZ1vCNkQOPRUBG8pqA==
+  dependencies:
+    prop-types "^15.7.2"
+
 "@dabh/diagnostics@^2.0.2":
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/@dabh/diagnostics/-/diagnostics-2.0.2.tgz#290d08f7b381b8f94607dc8f471a12c675f9db31"
@@ -1686,7 +1693,7 @@
     lodash "4.17.21"
     umzug "2.3.0"
 
-"@strapi/design-system@0.0.1-alpha.70":
+"@strapi/design-system@0.0.1-alpha.70", "@strapi/design-system@^0.0.1-alpha.70":
   version "0.0.1-alpha.70"
   resolved "https://registry.yarnpkg.com/@strapi/design-system/-/design-system-0.0.1-alpha.70.tgz#d2998b248654cdd66af4d1736d41032d53501063"
   integrity sha512-AvcwsA27G2Bm4Gna8hgEMAZjUmQrDagx8NtuUDVStr+51v/qqx+sk3M7JbhqJrYCYA+YsyqS9v3O14Vv0LKLUA==
@@ -1725,7 +1732,7 @@
     plop "2.7.6"
     pluralize "8.0.0"
 
-"@strapi/helper-plugin@4.0.0":
+"@strapi/helper-plugin@4.0.0", "@strapi/helper-plugin@^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@strapi/helper-plugin/-/helper-plugin-4.0.0.tgz#b8b502451c0fc9ef6f40b0f2377e6547828d3857"
   integrity sha512-73J7vTXnABAiS188INcah8zTLSZSICNxxgrUVALPaPcc65awRA9T6UenlHA1vX7Ldg+CQ/+owMiromSPo4AVyQ==
@@ -3540,6 +3547,11 @@ cipher-base@^1.0.0, cipher-base@^1.0.1, cipher-base@^1.0.3:
   dependencies:
     inherits "^2.0.1"
     safe-buffer "^5.0.1"
+
+ckeditor5-build-strapi-wysiwyg@^2.0.0-rc.1:
+  version "2.0.0-rc.1"
+  resolved "https://registry.yarnpkg.com/ckeditor5-build-strapi-wysiwyg/-/ckeditor5-build-strapi-wysiwyg-2.0.0-rc.1.tgz#5dd69d784df82157b971fabb62d73d1f41216660"
+  integrity sha512-X4qbUxVP2D6JvZTr/nLSltkPoFDhSxtvTtzcNr8i0JvPstrFqEmFgcc/OhHK5O6cQWNzf9T7u+0JD2If4wGt4w==
 
 class-utils@^0.3.5:
   version "0.3.6"
@@ -9768,6 +9780,18 @@ std-env@^2.2.1:
   integrity sha512-eOsoKTWnr6C8aWrqJJ2KAReXoa7Vn5Ywyw6uCXgA/xDhxPoaIsBa5aNJmISY04dLwXPBnDHW4diGM7Sn5K4R/g==
   dependencies:
     ci-info "^3.1.1"
+
+strapi-plugin-ckeditor5@^2.0.0-rc.2:
+  version "2.0.0-rc.2"
+  resolved "https://registry.yarnpkg.com/strapi-plugin-ckeditor5/-/strapi-plugin-ckeditor5-2.0.0-rc.2.tgz#6c2a5ff22d0dbb56c8553c2ef4668e6f4a9a084a"
+  integrity sha512-nZlQDr089GXcZxQHaz+ynykQNhoT0XOVBNPYRHZ/P7qJ66yOv2P/236gxC7bTE0ePCKZ6FPN2E6v1PrRwTNyhg==
+  dependencies:
+    "@ckeditor/ckeditor5-react" "^3.0.3"
+    "@strapi/design-system" "^0.0.1-alpha.70"
+    "@strapi/helper-plugin" "^4.0.0"
+    ckeditor5-build-strapi-wysiwyg "^2.0.0-rc.1"
+    react "^17.0.2"
+    react-dom "^17.0.2"
 
 stream-browserify@^3.0.0:
   version "3.0.0"

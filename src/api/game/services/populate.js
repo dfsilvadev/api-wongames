@@ -6,8 +6,10 @@
 
 module.exports = () => ({
   async populate(params) {
-    const response = { ok: "Service" };
+    const cat = await strapi
+      .service("api::category.category")
+      .find({ name: "Action" });
 
-    return response;
+    return cat;
   },
 });

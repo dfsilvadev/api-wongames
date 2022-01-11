@@ -4,12 +4,16 @@
  * populate service.
  */
 
+const axios = require("axios");
+
 module.exports = () => ({
   async populate(params) {
-    const cat = await strapi
-      .service("api::category.category")
-      .find({ name: "Action" });
+    const gogApiUrl = `https://www.gog.com/games/ajax/filtered?mediaType=game&page=1&sort=popularity`;
 
-    return cat;
+    const {
+      data: { products },
+    } = await axios.get(gogApiUrl);
+
+    console.log(products[0]);
   },
 });

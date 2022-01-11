@@ -25,7 +25,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::game.game",
-      "inversedBy": "platforms"
+      "mappedBy": "platforms"
     }
   }
 }

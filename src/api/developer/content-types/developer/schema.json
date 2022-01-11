@@ -24,7 +24,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::game.game",
-      "inversedBy": "developers"
+      "mappedBy": "developers"
     }
   }
 }

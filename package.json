@@ -17,6 +17,7 @@
     "@strapi/strapi": "4.0.0",
     "jsdom": "^19.0.0",
     "pg": "8.6.0",
+    "slugify": "^1.6.5",
     "strapi-plugin-ckeditor5": "^2.0.0-rc.2"
   },
   "author": {

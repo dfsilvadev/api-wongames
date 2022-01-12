@@ -10,8 +10,6 @@ module.exports = ({ strapi }) => ({
 
     const respose = await strapi.service("api::game.populate").populate();
 
-    console.log(respose);
-
     ctx.send({ ok: "Populate" });
   },
 });

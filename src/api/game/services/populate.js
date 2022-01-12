@@ -22,6 +22,35 @@ async function getGameInfo(slug) {
   };
 }
 
+async function getByName(name, entityName) {
+  const item = await strapi.entityService.findMany(
+    `api::${entityName}.${entityName}`,
+    {
+      fields: ["name", "slug"],
+      filters: { name },
+      populate: { entityName: true },
+    }
+  );
+
+  return item.length ? item[0] : null;
+}
+
+async function create(name, entityName) {
+  const item = await getByName(name, entityName);
+
+  if (!item) {
+    return await strapi.entityService.create(
+      `api::${entityName}.${entityName}`,
+      {
+        data: {
+          name,
+          slug: slugify(name, { lower: true }),
+        },
+      }
+    );
+  }
+}
+
 module.exports = ({ strapi }) => ({
   async populate(params) {
     const gogApiUrl = `https://www.gog.com/games/ajax/filtered?mediaType=game&page=1&sort=popularity`;
@@ -30,18 +59,7 @@ module.exports = ({ strapi }) => ({
       data: { products },
     } = await axios.get(gogApiUrl);
 
-    await strapi.entityService.create("api::publisher.publisher", {
-      data: {
-        name: products[0].publisher,
-        slug: slugify(products[0].publisher).toLowerCase(),
-      },
-    });
-
-    await strapi.entityService.create("api::developer.developer", {
-      data: {
-        name: products[0].developer,
-        slug: slugify(products[0].developer).toLowerCase(),
-      },
-    });
+    await create(products[4].publisher, "publisher");
+    await create(products[4].developer, "developer");
   },
 });

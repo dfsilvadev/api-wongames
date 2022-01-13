@@ -15,6 +15,7 @@
     "@strapi/plugin-i18n": "4.0.4",
     "@strapi/plugin-users-permissions": "4.0.4",
     "@strapi/strapi": "4.0.4",
+    "form-data": "^4.0.0",
     "jsdom": "^19.0.0",
     "pg": "8.6.0",
     "slugify": "^1.6.5",

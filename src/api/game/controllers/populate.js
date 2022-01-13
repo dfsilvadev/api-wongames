@@ -8,8 +8,14 @@ module.exports = ({ strapi }) => ({
   async populate(ctx) {
     console.log("Starting to populate...");
 
-    const respose = await strapi.service("api::game.populate").populate();
+    const options = {
+      sort: "popularity",
+      page: "1",
+      ...ctx.query,
+    };
 
-    ctx.send({ populate: true });
+    await strapi.service("api::game.populate").populate(options);
+
+    ctx.send("Finished populating");
   },
 });

@@ -4,11 +4,10 @@
   "info": {
     "singularName": "game",
     "pluralName": "games",
-    "displayName": "game",
-    "description": ""
+    "displayName": "game"
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
@@ -51,20 +50,18 @@
       ]
     },
     "cover": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
       "allowedTypes": [
         "images"
-      ]
+      ],
+      "type": "media",
+      "multiple": false
     },
     "gallery": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
       "allowedTypes": [
         "images"
-      ]
+      ],
+      "type": "media",
+      "multiple": true
     },
     "categories": {
       "type": "relation",

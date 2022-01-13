@@ -1,21 +1,8 @@
-import AuthLogo from "./extensions/logo-won-dark.svg";
-import MenuLogo from "./extensions/logo.svg";
-import favicon from "./extensions/logo.svg";
-
 export default {
   config: {
-    auth: {
-      logo: AuthLogo,
-    },
-    head: {
-      favicon: favicon,
-    },
-    menu: {
-      logo: MenuLogo,
-    },
     locales: [
       // 'ar',
-      "fr",
+      // 'fr',
       // 'cs',
       // 'de',
       // 'dk',
@@ -29,7 +16,7 @@ export default {
       // 'nl',
       // 'no',
       // 'pl',
-      "pt-BR",
+      // 'pt-BR',
       // 'pt',
       // 'ru',
       // 'sk',
@@ -42,5 +29,7 @@ export default {
       // 'zh',
     ],
   },
-  bootstrap() {},
+  bootstrap(app) {
+    console.log(app);
+  },
 };

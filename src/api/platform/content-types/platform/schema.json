@@ -4,17 +4,18 @@
   "info": {
     "singularName": "platform",
     "pluralName": "platforms",
-    "displayName": "platform"
+    "displayName": "platform",
+    "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
     "name": {
       "type": "string",
-      "required": true,
-      "unique": true
+      "unique": true,
+      "required": true
     },
     "slug": {
       "type": "uid",
@@ -25,7 +26,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::game.game",
-      "mappedBy": "platforms"
+      "inversedBy": "platforms"
     }
   }
 }

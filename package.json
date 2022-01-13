@@ -11,10 +11,10 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "@strapi/plugin-graphql": "4.0.0",
-    "@strapi/plugin-i18n": "4.0.0",
-    "@strapi/plugin-users-permissions": "4.0.0",
-    "@strapi/strapi": "4.0.0",
+    "@strapi/plugin-graphql": "4.0.4",
+    "@strapi/plugin-i18n": "4.0.4",
+    "@strapi/plugin-users-permissions": "4.0.4",
+    "@strapi/strapi": "4.0.4",
     "jsdom": "^19.0.0",
     "pg": "8.6.0",
     "slugify": "^1.6.5",
@@ -24,7 +24,7 @@
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "a135b4be-e298-4845-9ab4-786a8d4a2297"
+    "uuid": "7160f173-5547-4686-afce-f94e7fadfa58"
   },
   "engines": {
     "node": ">=12.x.x <=16.x.x",

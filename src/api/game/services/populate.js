@@ -102,7 +102,7 @@ async function setImage({ image, game, field = "cover" }) {
     const formData = new FormData();
 
     formData.append("refId", game.id);
-    formData.append("ref", "game");
+    formData.append("ref", "api::game.game");
     formData.append("field", field);
     formData.append("files", buffer, { filename: `${game.slug}.jpg` });
 

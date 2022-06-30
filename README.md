@@ -1,57 +1,72 @@
-# 🚀 Getting started with Strapi
+# React Avançado - Won Games API
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html) (CLI) which lets you scaffold and manage your project in seconds.
+Esta é a API para criar a Won Games Store do curso [React Avançado](https://reactavancado.com.br/).
 
-### `develop`
+## Requisitos
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-develop)
+Este projeto usa [PostgreSQL](https://www.postgresql.org/), então, para que funcione, instale em sua máquina local ou use o Docker.
+
+A configuração do Banco de Dados pode ser encontrada em [config/database.js](config/database.js)
+
+## Development
+
+After cloning this project, install the dependencies:
 
 ```
-npm run develop
-# or
+yarn install
+```
+
+And run using:
+
+```
 yarn develop
 ```
 
-### `start`
+The urls to access are:
 
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-start)
+- `http://localhost:1337/admin` - The Dashboard to create and populate data
+- `http://localhost:1337/graphql` - GraphQL Playground to test your queries
 
+Na primeira vez que acessar o Admin, você precisará criar um usuário.
+
+## Populate data
+
+Este projeto usa uma rota `api/games/populate` para preencher os dados via site GoG.
+Para que funcione, siga os passos:
+
+- Vá para Roles & Permissions > Public e certifique-se de que a rota `game:populate` esteja disponível publicamente e o upload também
+- Com o Strapi em execução, execute o seguinte comando no seu console:
+
+```bash
+$ curl -X POST http://localhost:1337/api/games/populate
+
+# you can pass query parameters like:
+$ curl -X POST http://localhost:1337/api/games/populate?page=2
+$ curl -X POST http://localhost:1337/api/games/populate?search=simcity
+$ curl -X POST http://localhost:1337/api/games/populate?sort=rating&price=free
+$ curl -X POST http://localhost:1337/api/games/populate?availability=coming&sort=popularity
 ```
-npm run start
-# or
-yarn start
+
+## Using dump
+
+First of all, you need to download our [dump.sql](https://github.com/Won-Games/database/raw/master/dump.sql) from our [database repository](https://github.com/Won-Games/database).
+
+1. Create a Postgres database and user:
+
+```sh
+CREATE USER wongames WITH ENCRYPTED PASSWORD 'wongames123';
+CREATE DATABASE wongames OWNER wongames;
 ```
 
-### `build`
+2. Populate the new database, using the following command (remember to point the place where you have the `dump.sql`):
 
-Build your admin panel. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-build)
-
-```
-npm run build
-# or
-yarn build
+```sh
+psql -h localhost -p 5432 -U wongames wongames < dump.sql
 ```
 
-## ⚙️ Deployment
+And you can access `localhost:1337/admin` with the following credentials:
 
-Strapi gives you many possible deployment options for your project. Find the one that suits you on the [deployment section of the documentation](https://docs.strapi.io/developer-docs/latest/setup-deployment-guides/deployment.html).
-
-## 📚 Learn more
-
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://docs.strapi.io) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
-
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
-
-## ✨ Community
-
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
-
----
-
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+```sh
+email: wongames@wongames.com
+password: Wongames123
+```

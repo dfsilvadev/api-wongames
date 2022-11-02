@@ -1,8 +1,9 @@
 {
   "collectionName": "components_page_robbons",
   "info": {
-    "displayName": "Robbon",
-    "icon": "ribbon"
+    "displayName": "Ribbon",
+    "icon": "ribbon",
+    "description": ""
   },
   "options": {},
   "attributes": {

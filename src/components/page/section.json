@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_page_sections",
+  "info": {
+    "displayName": "section",
+    "icon": "list-alt"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "highlight": {
+      "displayName": "highlight",
+      "type": "component",
+      "repeatable": false,
+      "component": "page.highlight"
+    }
+  }
+}

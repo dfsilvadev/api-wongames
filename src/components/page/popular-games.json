@@ -2,13 +2,15 @@
   "collectionName": "components_page_popular_games",
   "info": {
     "displayName": "popularGames",
-    "icon": "star-of-life"
+    "icon": "star-of-life",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "title": {
       "type": "string",
-      "required": true
+      "required": false,
+      "default": "You may like these games"
     },
     "highlight": {
       "type": "component",
